@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Vanessa Martinez | Timeless Furniture Brochure</title>
-  <!-- Google Fonts + subtle reset -->
+  <!-- Google Fonts + clean reset -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <style>
     * {
@@ -14,33 +14,35 @@
     }
 
     body {
-      background: #F6F2EA;  /* warm paper background */
+      background: #F6F2EA;
       font-family: 'Inter', sans-serif;
       color: #2C2B28;
       scroll-behavior: smooth;
     }
 
-    /* brochure wrapper - fully responsive */
+    /* brochure container — fluid & auto-adaptive */
     .brochure-container {
       max-width: 1400px;
-      margin: 20px auto;
+      width: 95%;
+      margin: 30px auto;
       background: #FEFCF8;
       box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2);
-      border-radius: 28px;
+      border-radius: 32px;
       overflow: hidden;
+      transition: all 0.2s;
     }
 
-    /* HEADER / COVER SECTION (like a brochure cover) */
+    /* COVER — fully responsive typography */
     .cover {
       background: #F2ECE2;
-      padding: clamp(32px, 8vw, 60px) clamp(20px, 5vw, 48px) clamp(32px, 7vw, 48px) clamp(20px, 5vw, 48px);
+      padding: clamp(2rem, 8vw, 4rem) clamp(1.2rem, 5vw, 3rem);
       text-align: center;
       border-bottom: 2px solid #E0D6C8;
     }
 
     .brand {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 8vw, 4rem);
+      font-size: clamp(2rem, 9vw, 4.5rem);
       font-weight: 600;
       letter-spacing: -0.02em;
       color: #4A3B2C;
@@ -49,33 +51,32 @@
     }
 
     .tagline {
-      font-size: clamp(0.7rem, 3vw, 1rem);
+      font-size: clamp(0.7rem, 3.2vw, 0.95rem);
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #977B5C;
       border-top: 1px solid #DFD3C3;
       display: inline-block;
       padding-top: 12px;
-      word-break: keep-all;
     }
 
     .cover-desc {
-      max-width: 600px;
-      margin: 28px auto 0;
+      max-width: 650px;
+      margin: 24px auto 0;
       color: #5E4F3C;
       line-height: 1.5;
       font-weight: 400;
-      font-size: clamp(0.85rem, 3.5vw, 1rem);
+      font-size: clamp(0.85rem, 3.6vw, 1rem);
       padding: 0 8px;
     }
 
-    /* navigation (minimal, like brochure tabs) — fully responsive */
+    /* navigation — auto wrapping + touch friendly */
     .nav-brochure {
       background: #FFFCF7;
       padding: 14px 16px;
       display: flex;
       justify-content: center;
-      gap: clamp(12px, 5vw, 36px);
+      gap: clamp(16px, 4vw, 42px);
       border-bottom: 1px solid #E9E0D4;
       flex-wrap: wrap;
     }
@@ -92,11 +93,12 @@
       white-space: nowrap;
     }
 
-    /* on small screens we allow wrapping but keep clean */
+    /* for very narrow screens: allow natural wrap */
     @media (max-width: 550px) {
       .nav-brochure a {
         white-space: normal;
         font-size: 0.7rem;
+        text-align: center;
       }
       .nav-brochure {
         gap: 14px;
@@ -108,43 +110,43 @@
       color: #2F241B;
     }
 
-    /* section titles */
+    /* section headers */
     .section-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 6vw, 2.6rem);
+      font-size: clamp(1.8rem, 6vw, 2.7rem);
       font-weight: 500;
       color: #3A2C1F;
       margin-bottom: 12px;
-      letter-spacing: -0.2px;
     }
 
     .section-sub {
       color: #807560;
       font-size: clamp(0.85rem, 3.5vw, 1rem);
-      margin-bottom: 32px;
+      margin-bottom: 36px;
       border-left: 3px solid #DBC9B2;
-      padding-left: 16px;
+      padding-left: 18px;
       font-style: italic;
     }
 
-    /* main content */
+    /* main content padding — responsive */
     .content-padding {
-      padding: clamp(24px, 5vw, 48px) clamp(20px, 5vw, 44px);
+      padding: clamp(1.5rem, 5vw, 3rem) clamp(1.2rem, 5vw, 2.8rem);
     }
 
-    /* furniture grid (brochure style: all items visible, clean cards) - fully responsive */
+    /* furniture grid: auto-fill, perfect for all devices */
     .furniture-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 28px 24px;
       margin: 28px 0 20px;
     }
 
+    /* card styling */
     .item-card {
       background: #FFFFFF;
-      border-radius: 20px;
+      border-radius: 24px;
       overflow: hidden;
-      transition: all 0.25s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s;
       box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02);
       border: 1px solid #F0E6DA;
       display: flex;
@@ -153,32 +155,31 @@
 
     .item-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 20px 30px -12px rgba(60, 40, 20, 0.12);
+      box-shadow: 0 22px 30px -12px rgba(60, 40, 20, 0.12);
       border-color: #E1D0BC;
     }
 
     .item-image {
       background-color: #EADFCB;
-      height: 200px;
+      height: 210px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 3.5rem;
+      font-size: 3.8rem;
       background-size: cover;
       background-position: center;
-      transition: all 0.2s;
       color: #5E4A32;
+      transition: 0.2s;
     }
 
-    /* different placeholder images with emoji + pattern (to represent each piece) */
     .item-info {
-      padding: 20px 18px 22px;
+      padding: 22px 20px 24px;
       flex: 1;
     }
 
     .item-info h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.55rem;
+      font-size: 1.6rem;
       font-weight: 600;
       color: #3E2D1E;
       margin-bottom: 8px;
@@ -190,7 +191,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       color: #AF9276;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .item-description {
@@ -213,45 +214,46 @@
 
     .badge {
       background: #F8F2EA;
-      padding: 4px 11px;
+      padding: 5px 12px;
       border-radius: 40px;
       font-weight: 500;
     }
 
-    /* special collections row */
+    /* highlight rows */
     .highlight-row {
       background: #F9F5EE;
-      border-radius: 28px;
-      padding: 24px 20px;
-      margin: 40px 0 20px;
+      border-radius: 32px;
+      padding: 28px 24px;
+      margin: 48px 0 24px;
       text-align: center;
     }
 
     .highlight-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 18px;
       justify-content: center;
-      margin-top: 20px;
+      margin-top: 24px;
     }
 
     .highlight-card {
       background: white;
-      border-radius: 24px;
-      padding: 14px 16px;
-      flex: 1 1 170px;
+      border-radius: 28px;
+      padding: 16px 20px;
+      flex: 1 1 180px;
       min-width: 140px;
       box-shadow: 0 5px 12px rgba(0,0,0,0.03);
       border: 1px solid #E8DCCE;
       font-size: 0.85rem;
+      transition: 0.1s;
     }
 
-    /* CTA / contact */
+    /* contact section */
     .contact-section {
       background: #E7DFD1;
-      margin: 30px 0 20px;
-      border-radius: 32px;
-      padding: 36px 24px;
+      margin: 40px 0 20px;
+      border-radius: 36px;
+      padding: 42px 28px;
       text-align: center;
     }
 
@@ -259,29 +261,27 @@
       background: #7C5F42;
       color: white;
       border: none;
-      padding: 14px 28px;
+      padding: 14px 30px;
       border-radius: 60px;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       cursor: pointer;
       transition: 0.2s;
       font-family: 'Inter', sans-serif;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      margin-top: 20px;
-      width: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-top: 24px;
       display: inline-block;
     }
 
-    .btn-inquire:hover {
-      background: #5C4632;
+    .btn-inquire:active {
       transform: scale(0.97);
     }
 
-    /* footer like brochure back cover - responsive */
+    /* footer */
     .footer-brochure {
       background: #2C241C;
       color: #D9CDBC;
-      padding: 32px 24px 28px;
+      padding: 38px 32px 28px;
       font-size: 0.8rem;
       border-top: 1px solid #4C3D2E;
     }
@@ -290,7 +290,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 28px;
+      gap: 30px;
       text-align: left;
     }
 
@@ -299,50 +299,75 @@
       line-height: 1.5;
     }
 
-    /* improved mobile tap targets */
-    @media (max-width: 680px) {
+    /* fully responsive: mobile layout improvements */
+    @media (max-width: 760px) {
+      .brochure-container {
+        width: 96%;
+        margin: 16px auto;
+        border-radius: 28px;
+      }
+      .item-image {
+        height: 180px;
+        font-size: 3rem;
+      }
+      .item-info h3 {
+        font-size: 1.4rem;
+      }
       .footer-flex {
         flex-direction: column;
         text-align: center;
-        gap: 20px;
-      }
-      .highlight-card {
-        flex: 1 1 140px;
+        gap: 24px;
       }
       .btn-inquire {
         width: 90%;
         padding: 14px 16px;
       }
-      .item-info h3 {
-        font-size: 1.4rem;
-      }
-      .item-image {
-        height: 180px;
-        font-size: 2.8rem;
+      .highlight-card {
+        flex: 1 1 140px;
       }
     }
 
-    /* utility */
+    @media (max-width: 480px) {
+      .furniture-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+      .item-card {
+        max-width: 100%;
+      }
+      .cover {
+        border-radius: 0;
+      }
+      .brand {
+        margin-bottom: 6px;
+      }
+    }
+
     .text-center { text-align: center; }
     .mt-2 { margin-top: 12px; }
 
-    /* scroll margin for anchors to not hide behind sticky? (no sticky but fine) */
+    /* scroll margin */
     [id] {
-      scroll-margin-top: 20px;
+      scroll-margin-top: 24px;
+    }
+
+    /* enforce no horizontal overflow */
+    img, svg, .brochure-container, .item-card {
+      max-width: 100%;
     }
   </style>
 </head>
 <body>
 <div class="brochure-container">
   
-  <!-- COVER: brochure style -->
+  <!-- COVER: elegant brochure style -->
   <div class="cover">
     <div class="brand">Vanessa Martinez</div>
     <div class="tagline">✦ handcrafted furniture | timeless expression ✦</div>
-    <p class="cover-desc">Solid wood · heirloom quality · made for generations. Each piece is a marriage of modern silhouette and traditional joinery. Discover our complete collection below — a curated brochure of every design.</p>
+    <p class="cover-desc">Solid wood · heirloom quality · made for generations. Each piece is a marriage of modern silhouette and traditional joinery. Discover our complete collection below — a living brochure of every design.</p>
   </div>
 
-  <!-- navigation anchor -->
+  <!-- navigation (auto desktop & mobile) -->
   <div class="nav-brochure">
     <a href="#allpieces">All pieces</a>
     <a href="#living">Living room</a>
@@ -351,15 +376,15 @@
     <a href="#contact">Catalogue</a>
   </div>
 
-  <!-- MAIN CONTENT: all furniture items shown (brochure style) -->
+  <!-- MAIN CONTENT: all furniture items displayed -->
   <div class="content-padding" id="allpieces">
     <h2 class="section-title">The complete collection</h2>
     <div class="section-sub">Every piece, from sculptural chairs to expansive tables, crafted with natural oil finishes and premium hardwoods.</div>
     
-    <!-- ---- ALL FURNITURE ITEMS (brochure grid, no prices, focused on materials & story) ---- -->
+    <!-- furniture grid (12 items) -->
     <div class="furniture-grid">
       
-      <!-- Item 1 : Elm Dining Table -->
+      <!-- Item 1 -->
       <div class="item-card">
         <div class="item-image" style="background: #E2D5C2;">🪵 ⟷ 🪑</div>
         <div class="item-info">
@@ -370,7 +395,7 @@
         </div>
       </div>
       
-      <!-- Item 2 : Cloud Lounge Chair -->
+      <!-- Item 2 -->
       <div class="item-card">
         <div class="item-image" style="background: #EBDDCB;">🪑 ☁️</div>
         <div class="item-info">
@@ -381,7 +406,7 @@
         </div>
       </div>
       
-      <!-- Item 3 : Mesa Coffee Table -->
+      <!-- Item 3 -->
       <div class="item-card">
         <div class="item-image" style="background: #DDD0BC;">🗻 ⟷ 🪵</div>
         <div class="item-info">
@@ -392,7 +417,7 @@
         </div>
       </div>
       
-      <!-- Item 4 : Arch Bookshelf -->
+      <!-- Item 4 -->
       <div class="item-card">
         <div class="item-image" style="background: #DACEB9;">📚 🪵</div>
         <div class="item-info">
@@ -403,7 +428,7 @@
         </div>
       </div>
       
-      <!-- Item 5 : Spindle Bed Frame -->
+      <!-- Item 5 -->
       <div class="item-card">
         <div class="item-image" style="background: #E3D5C2;">🛏️ ⟷ 🌾</div>
         <div class="item-info">
@@ -414,7 +439,7 @@
         </div>
       </div>
       
-      <!-- Item 6 : Oak Media Console -->
+      <!-- Item 6 -->
       <div class="item-card">
         <div class="item-image" style="background: #E2D3BD;">📺 🪵</div>
         <div class="item-info">
@@ -425,7 +450,7 @@
         </div>
       </div>
       
-      <!-- Item 7 : Round Pedestal Table -->
+      <!-- Item 7 -->
       <div class="item-card">
         <div class="item-image" style="background: #DDCDB5;">🍽️ ⟷ 🌀</div>
         <div class="item-info">
@@ -436,7 +461,7 @@
         </div>
       </div>
       
-      <!-- Item 8 : Woven Bench -->
+      <!-- Item 8 -->
       <div class="item-card">
         <div class="item-image" style="background: #EDE0CF;">🪑 ➰</div>
         <div class="item-info">
@@ -447,7 +472,7 @@
         </div>
       </div>
       
-      <!-- Item 9 : Sculptural Stool -->
+      <!-- Item 9 -->
       <div class="item-card">
         <div class="item-image" style="background: #E9DECE;">🗿 🪑</div>
         <div class="item-info">
@@ -458,7 +483,7 @@
         </div>
       </div>
       
-      <!-- Item 10 : Glass-front Cabinet -->
+      <!-- Item 10 -->
       <div class="item-card">
         <div class="item-image" style="background: #DECFBA;">🚪 ✨</div>
         <div class="item-info">
@@ -469,7 +494,7 @@
         </div>
       </div>
 
-      <!-- Item 11 : Platform Bed (low) -->
+      <!-- Item 11 -->
       <div class="item-card">
         <div class="item-image" style="background: #E5D8C6;">🛌 🌙</div>
         <div class="item-info">
@@ -480,7 +505,7 @@
         </div>
       </div>
 
-      <!-- Item 12 : Ladder Desk -->
+      <!-- Item 12 -->
       <div class="item-card">
         <div class="item-image" style="background: #E1D2BC;">✍️ 📖</div>
         <div class="item-info">
@@ -492,10 +517,10 @@
       </div>
     </div>
 
-    <!-- secondary category anchors -->
+    <!-- living room highlights -->
     <div id="living" style="scroll-margin-top: 30px;"></div>
     <div class="highlight-row" style="margin-top: 20px;">
-      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 5vw, 1.8rem);">✨ Living room highlights</h3>
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem, 5vw, 1.9rem);">✨ Living room highlights</h3>
       <div class="highlight-grid">
         <div class="highlight-card">Cloud Lounge Chair<br><span style="font-size:0.7rem;">walnut + wool</span></div>
         <div class="highlight-card">Mesa Coffee Table<br><span style="font-size:0.7rem;">white oak</span></div>
@@ -504,9 +529,10 @@
       </div>
     </div>
 
+    <!-- dining collection -->
     <div id="dining" style="scroll-margin-top: 30px;"></div>
     <div class="highlight-row">
-      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 5vw, 1.8rem);">🍽️ Dining & kitchen collection</h3>
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem, 5vw, 1.9rem);">🍽️ Dining & kitchen collection</h3>
       <div class="highlight-grid">
         <div class="highlight-card">Valley Elm Table<br><span style="font-size:0.7rem;">seats 8-10</span></div>
         <div class="highlight-card">Gather Round Table<br><span style="font-size:0.7rem;">expandable maple</span></div>
@@ -515,9 +541,10 @@
       </div>
     </div>
 
+    <!-- bedroom sanctuaries -->
     <div id="bedroom" style="scroll-margin-top: 30px;"></div>
     <div class="highlight-row">
-      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 5vw, 1.8rem);">🛌 bedroom sanctuaries</h3>
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem, 5vw, 1.9rem);">🛌 bedroom sanctuaries</h3>
       <div class="highlight-grid">
         <div class="highlight-card">Spindle Bed Frame<br><span style="font-size:0.7rem;">ash wood</span></div>
         <div class="highlight-card">Zen Platform Bed<br><span style="font-size:0.7rem;">walnut/bamboo</span></div>
@@ -525,7 +552,7 @@
       </div>
     </div>
 
-    <!-- CTA brochure request / contact (no price, just inquiries) -->
+    <!-- CTA brochure request / contact (inquiry only, no price) -->
     <div id="contact" class="contact-section" style="scroll-margin-top: 30px;">
       <h3 style="font-size: clamp(1.5rem, 6vw, 1.9rem); font-family: 'Cormorant Garamond', serif;">Request our printed brochure</h3>
       <p style="max-width: 550px; margin: 16px auto; color: #3E3529; font-size: clamp(0.8rem, 3.2vw, 0.9rem);">Receive a full material swatch kit, dimensions catalog, and artisan story. We deliver worldwide.</p>
@@ -548,88 +575,87 @@
 </div>
 
 <script>
-  // interactive "request brochure" with modal / toast (brochure style, no prices) - accessible on mobile
-  const requestBtn = document.getElementById('brochureRequestBtn');
-  if (requestBtn) {
-    requestBtn.addEventListener('click', () => {
-      // create a modal for mobile and desktop
-      const modalOverlay = document.createElement('div');
-      modalOverlay.style.position = 'fixed';
-      modalOverlay.style.top = '0';
-      modalOverlay.style.left = '0';
-      modalOverlay.style.width = '100%';
-      modalOverlay.style.height = '100%';
-      modalOverlay.style.backgroundColor = 'rgba(40, 30, 20, 0.85)';
-      modalOverlay.style.backdropFilter = 'blur(5px)';
-      modalOverlay.style.display = 'flex';
-      modalOverlay.style.alignItems = 'center';
-      modalOverlay.style.justifyContent = 'center';
-      modalOverlay.style.zIndex = '10000';
-      modalOverlay.style.fontFamily = "'Inter', sans-serif";
-      modalOverlay.style.padding = '16px';
+  (function() {
+    // request brochure modal (fully functional for all screens)
+    const requestBtn = document.getElementById('brochureRequestBtn');
+    if (requestBtn) {
+      requestBtn.addEventListener('click', () => {
+        const modalOverlay = document.createElement('div');
+        modalOverlay.style.position = 'fixed';
+        modalOverlay.style.top = '0';
+        modalOverlay.style.left = '0';
+        modalOverlay.style.width = '100%';
+        modalOverlay.style.height = '100%';
+        modalOverlay.style.backgroundColor = 'rgba(40, 30, 20, 0.85)';
+        modalOverlay.style.backdropFilter = 'blur(6px)';
+        modalOverlay.style.display = 'flex';
+        modalOverlay.style.alignItems = 'center';
+        modalOverlay.style.justifyContent = 'center';
+        modalOverlay.style.zIndex = '10000';
+        modalOverlay.style.padding = '20px';
+        modalOverlay.style.fontFamily = "'Inter', sans-serif";
 
-      const modalCard = document.createElement('div');
-      modalCard.style.background = '#FFFCF5';
-      modalCard.style.maxWidth = '420px';
-      modalCard.style.width = '100%';
-      modalCard.style.borderRadius = '36px';
-      modalCard.style.padding = '28px 24px';
-      modalCard.style.boxShadow = '0 30px 40px rgba(0,0,0,0.3)';
-      modalCard.style.textAlign = 'center';
-      modalCard.style.margin = 'auto';
-      modalCard.innerHTML = `
-        <span style="font-size: 2.5rem;">📖🍃</span>
-        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; margin: 12px 0 4px;">Free brochure & sample</h3>
-        <p style="margin: 12px 0 16px; color: #4b3b2a; font-size:0.85rem;">Enter your details to receive our full collection lookbook + wood swatches.</p>
-        <input type="text" id="modalName" placeholder="Your name" style="width:100%; padding: 12px; border-radius: 60px; border:1px solid #E1D3C2; margin-bottom: 12px; background: white; font-size:1rem;">
-        <input type="email" id="modalEmail" placeholder="Email address" style="width:100%; padding: 12px; border-radius: 60px; border:1px solid #E1D3C2; margin-bottom: 20px; font-size:1rem;">
-        <button id="sendRequestBtn" style="background: #7C5F42; color:white; border:none; padding: 12px 0; width:100%; border-radius: 60px; font-weight:600; cursor:pointer;">Send me the brochure →</button>
-        <button id="closeModalBtn" style="background:transparent; border:none; margin-top: 18px; font-size:0.75rem; cursor:pointer; color:#927C60;">Close</button>
-      `;
-      modalOverlay.appendChild(modalCard);
-      document.body.appendChild(modalOverlay);
+        const modalCard = document.createElement('div');
+        modalCard.style.background = '#FFFCF5';
+        modalCard.style.maxWidth = '440px';
+        modalCard.style.width = '100%';
+        modalCard.style.borderRadius = '40px';
+        modalCard.style.padding = '32px 28px';
+        modalCard.style.boxShadow = '0 30px 45px rgba(0,0,0,0.3)';
+        modalCard.style.textAlign = 'center';
+        modalCard.innerHTML = `
+          <span style="font-size: 2.6rem;">📖🍃</span>
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.85rem; margin: 12px 0 4px;">Free brochure & sample</h3>
+          <p style="margin: 12px 0 20px; color: #4b3b2a;">Enter your details to receive our full collection lookbook + wood swatches.</p>
+          <input type="text" id="modalName" placeholder="Your name" style="width:100%; padding: 14px; border-radius: 60px; border:1px solid #E1D3C2; margin-bottom: 14px; background: white; font-size:1rem;">
+          <input type="email" id="modalEmail" placeholder="Email address" style="width:100%; padding: 14px; border-radius: 60px; border:1px solid #E1D3C2; margin-bottom: 24px; font-size:1rem;">
+          <button id="sendRequestBtn" style="background: #7C5F42; color:white; border:none; padding: 14px 0; width:100%; border-radius: 60px; font-weight:600; cursor:pointer; font-size:0.95rem;">Send me the brochure →</button>
+          <button id="closeModalBtn" style="background:transparent; border:none; margin-top: 20px; font-size:0.75rem; cursor:pointer; color:#927C60;">Close</button>
+        `;
+        modalOverlay.appendChild(modalCard);
+        document.body.appendChild(modalOverlay);
 
-      const closeModal = () => modalOverlay.remove();
-      document.getElementById('closeModalBtn')?.addEventListener('click', closeModal);
-      document.getElementById('sendRequestBtn')?.addEventListener('click', () => {
-        const nameInput = document.getElementById('modalName');
-        const emailInput = document.getElementById('modalEmail');
-        const name = nameInput?.value.trim() || 'friend';
-        const email = emailInput?.value.trim();
-        if (email && email.includes('@') && email.includes('.')) {
-          alert(`✨ Thank you ${name}! Your Vanessa Martinez brochure will be sent to ${email} within 2 days. We plant a tree for every request. 🌳`);
-          closeModal();
-        } else {
-          alert('🌿 Please provide a valid email so we can send the beautiful furniture catalogue.');
+        const closeModal = () => modalOverlay.remove();
+        document.getElementById('closeModalBtn')?.addEventListener('click', closeModal);
+        document.getElementById('sendRequestBtn')?.addEventListener('click', () => {
+          const nameInput = document.getElementById('modalName');
+          const emailInput = document.getElementById('modalEmail');
+          const name = nameInput?.value.trim() || 'friend';
+          const email = emailInput?.value.trim();
+          if (email && email.includes('@') && email.includes('.')) {
+            alert(`✨ Thank you ${name}! Your Vanessa Martinez brochure will be sent to ${email} within 2 days. We plant a tree for every request. 🌳`);
+            closeModal();
+          } else {
+            alert('🌿 Please provide a valid email to receive the beautiful furniture catalogue.');
+          }
+        });
+        modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeModal(); });
+      });
+    }
+
+    // smooth scroll for navigation links
+    document.querySelectorAll('.nav-brochure a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href !== '#') {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         }
       });
-      modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeModal(); });
     });
-  }
 
-  // smooth scroll for anchor links with better mobile performance
-  document.querySelectorAll('.nav-brochure a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href && href !== '#') {
-        const target = document.querySelector(href);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
+    // subtle card interactions
+    const cards = document.querySelectorAll('.item-card');
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transition = 'all 0.2s';
+      });
     });
-  });
-
-  // small hover effect for cards (only for non-touch devices)
-  const cards = document.querySelectorAll('.item-card');
-  cards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      card.style.transition = 'all 0.2s';
-    });
-  });
-
-  console.log('Vanessa Martinez brochure — fully responsive, mobile-optimized, all items visible.');
+    console.log('Fully responsive furniture brochure — auto desktop & mobile, all items shown.');
+  })();
 </script>
 </body>
 </html>
